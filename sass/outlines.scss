@@ -1,0 +1,156 @@
+body {
+  background: $bg-darkgrey url("../img/bb-mobile.png") no-repeat 50% 0px;
+  // background-size: 720px auto;
+  min-height: 750px;
+}
+
+@media ($tablet-widths) {
+  body {
+    background: $bg-darkgrey url("../img/bb-tablet.png") no-repeat 50% 0px;
+    // background-size: 1178px auto;
+  }
+}
+
+@media ($desktop-widths) {
+  body {
+    background: $bg-darkgrey url("../img/bb-desktop.png") no-repeat 50% 0px;
+    // background-size: 1391px auto;
+  }
+}
+
+/* Обводка для сеток.
+Подробнее - базовый курс, раздел "Сетки", начиная с 2:00:00 */
+
+body {
+  padding: 3px;
+  margin: 0;
+}
+
+body > *,
+body > * > *,
+body > * > * > *,
+body > * > * > * > *,
+body > * > * > * > * > * {
+  position: relative;
+}
+
+body > *::before,
+body > * > *::before,
+body > * > * > *::before,
+body > * > * > * > *::before,
+body > * > * > * > * > *::before {
+  content: "";
+  position: absolute;
+
+  height: 24px;
+  padding: 2px 5px;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Courier New", monotype;
+  white-space: nowrap;
+}
+
+body > *::before {
+  top: -3px;
+  left: -3px;
+}
+
+body > * > *::before {
+  top: -3px;
+  left: -3px;
+}
+
+body > * > * > *::before,
+body > * > * > * > *::before,
+body > * > * > * > * > *::before {
+  top: 0;
+  left: 0;
+}
+
+body > * {
+  background: rgba(0, 128, 0, 0.2);
+  box-shadow: 0 0 0 3px green;
+}
+
+body > *::before {
+  color: white;
+  background: green;
+}
+
+body > * > * {
+  background: rgba(255, 45, 82, 0.2);
+  box-shadow: 0 0 0 3px rgb(255, 45, 82);
+}
+
+body > * > *::before {
+  color: white;
+  background: rgb(255, 45, 82);
+}
+
+body > * > * > *,
+body > * > * > * > *,
+body > * > * > * > * > * {
+  background: rgba(234, 255, 45, 0.2);
+  box-shadow: inset 0 0 0 2px rgb(234, 255, 45);
+}
+
+body > * > * > *::before,
+body > * > * > * > *::before,
+body > * > * > * > * > *::before {
+  color: black;
+  background: rgb(234, 255, 45);
+}
+
+/*Дальше идут подписи к блокам*/
+
+.main-header::before {
+  content: ".main-header";
+}
+
+.container::before {
+  content: ".container";
+}
+
+.main-header .container::before {
+  top: auto;
+  bottom: -28px;
+}
+
+.main-navigation::before {
+  content: ".main-navigation";
+}
+
+.user-block::before {
+  content: ".user-block";
+}
+
+.index-logo::before {
+  content: ".index-logo";
+}
+
+.features::before {
+  content: ".features";
+  top: -28px;
+}
+
+.features-item::before {
+  content: ".features-item";
+}
+
+.index-content::before {
+  content: ".index-content";
+}
+
+.index-content-left::before {
+  content: ".index-content-left";
+  left: auto;
+  right: 0;
+}
+
+.index-content-right::before {
+  content: ".index-content-right";
+  left: auto;
+  right: 0;
+}
